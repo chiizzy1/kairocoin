@@ -1,4 +1,3 @@
-import Logo from "./logo.svg";
 import HeroImage from "./Hero.svg";
 import AboutImage from "./about.svg"
 import Nabox from "./nabox.svg"
@@ -12,10 +11,10 @@ import Phase from "./phase.svg"
 import EthLogo from "./eth.svg"
 import Chart from "./chart.svg"
 import CircleIcon from "./icon.svg"
+import Logo from "./logo.svg"
 
 export {
-    Logo,
-    HeroImage, 
+    HeroImage,
     Nabox, Techopedia, Binance,
     Gotham, AboutImage,
     YellowBg,
@@ -24,5 +23,6 @@ export {
     Phase,
     EthLogo,
     Chart,
-    CircleIcon
+    CircleIcon,
+    Logo
 };
