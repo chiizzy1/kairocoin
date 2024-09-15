@@ -8,10 +8,10 @@ import YellowBg from "./yellow.png"
 import BlueBg from "./blue.png"
 import BrownBg from "./brown.png"
 import Phase from "./phase.svg"
+import Logo from "./logooo.svg";
 import EthLogo from "./eth.svg"
 import Chart from "./chart.svg"
 import CircleIcon from "./icon.svg"
-import Logo from "./logo.svg"
 
 export {
     HeroImage,
