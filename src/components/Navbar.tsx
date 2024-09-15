@@ -4,19 +4,35 @@ import Link from "next/link";
 import { navLinks } from "@/constants";
 import Image from "next/image";
 import { Logo } from "@/assets";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/Button";
 
 const Navbar = () => {
-  const [active, setActive] = useState("Discover");
+  const [stickyClass, setStickyClass] = useState<boolean>(false);
+  const [active, setActive] = useState<string>("Home");
 
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      windowHeight > 50 ? setStickyClass(true) : setStickyClass(false);
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+    return () => window.removeEventListener("scroll", stickNavbar);
+  }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all ease-in-out`}>
-      <div className="container mx-auto w-full">
-        <div className="flex justify-between items-center transition py-[40px]">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50  ${
+        stickyClass ? "bg-white/20 backdrop-blur-sm border-b border-slate-300 shadow-lg" : ""
+      }`}
+    >
+      <div className="container max-w-6xl mx-auto w-full">
+        <div className="flex w-full justify-between items-center py-4">
           <Link href="/">
-            <Image src={Logo} alt="logo" className="w-[40px] h-[40px]" />
+            <Image src={Logo} alt="logo" />
           </Link>
 
           <div className="flex items-center gap-[36px]">
@@ -24,8 +40,8 @@ const Navbar = () => {
               <ul key={id}>
                 <Link href={link} onClick={() => setActive(title)}>
                   <span
-                    className={`text-[14px] leading-[14px] font-semibold font-laila ${
-                      active === title ? "text-primary underline underline-offset-8" : "text-black"
+                    className={`text-[14px] leading-[19.1px] font-semibold ${
+                      active === title ? "text-secondary underline underline-offset-8" : "text-black"
                     }`}
                   >
                     {title}
@@ -35,11 +51,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-[24px]">
-            <button className="bg-white border-2 border-black w-[110px] h-[46px]">
-              <span className="text-[14px] font-bold">Buy presale</span>
-            </button>
-          </div>
+          <Button className="uppercase">Buy Presale</Button>
         </div>
       </div>
     </nav>

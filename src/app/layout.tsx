@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Laila } from "next/font/google";
+import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
-const laila = Laila({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-laila" });
+const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], });
 
-const detacher = localFont({
-  src: "./fonts/detacher.otf",
-  variable: "--font-detacher",
+const blacknorthdemo = localFont({
+  src: "./fonts/blacknorthdemo.otf",
+  variable: "--font-blacknorthdemo",
 });
 
 export const metadata: Metadata = {
-  title: "Unique NFTs",
-  description: "Explore, buy, and sell extraordinary NFTs on our decentralized marketplace.",
+  title: "KairoCoin",
+  description: "The future of finance with a coin that embodies both the rich history of Cairo and the cutting-edge potential of the digital age.",
 };
 
 export default function RootLayout({
@@ -24,9 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("bg-white", laila.variable, detacher.variable)}>
+      <body className={cn("bg-white", manrope.className, blacknorthdemo.variable)}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

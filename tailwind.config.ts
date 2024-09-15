@@ -16,14 +16,26 @@ const config: Config = {
     },
     extend: {
       colors: {
-        'RoadBg': "rgba(250, 202, 153, 1)",
-        'BuyBg': "rgba(250, 202, 0, 1)",
-        'BlueBg': "rgba(75, 156, 255, 1)",
-        'Line': "rgba(217, 217, 217, 1)",
+        primary: "#4B9CFF",
+        secondary: "#FACA00",
+        tertiary: "#FACA99",
       },
       fontFamily: {
-        laila: "var(--font-laila)",
-        detacher: "var(--font-detacher)",
+        blacknorthdemo: "var(--font-blacknorthdemo)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

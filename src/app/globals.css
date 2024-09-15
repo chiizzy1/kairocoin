@@ -21,6 +21,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-.shadow {
-  box-shadow: 2px 2px 3px #B624A9;
+.brown {
+  background: rgba(30, 30, 30, 0.31);
 }

@@ -1,47 +1,46 @@
-import React from 'react'
-import { RoadmapPhase } from '@/constants'
-const RoadMap: React.FC = () => {
+import { FC } from "react";
+import { roadmapPhase } from "@/constants";
+import Image from "next/image";
+import { CircleIcon, Phase } from "@/assets";
+interface RoadMapProps {}
+
+const RoadMap: FC<RoadMapProps> = ({}) => {
   return (
-    <section className='pt-[40px] pb-[114px] m-[18px] w-[1500px] -ml-2 z-[1] bg-RoadBg rounded-[6rem]'>
-      <div className="container mx-auto w-full relative">
-        <div className="text-center">
-            <span className="font-bold text-[40px] text-black">ROAD MAP</span>
-        </div>
+    <section className="py-[64px] bg-tertiary rounded-[64px]">
+      <div className="container max-w-6xl mx-auto w-full">
+        <div className="flex flex-col items-center gap-[64px]">
+          <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">Roadmap</h3>
 
-        <div className="grid grid-cols-3 gap-10 text-center w-[790px] h-[328px] ml-[13rem] mt-20">
-          {RoadmapPhase.map(({id, header, span, span2}) => (
-            <div key={id} className="">
-                 <div className="w-[240px] h-[260px] mt-20 bg-black rounded-xl">
-                   <div className=''>
-
-                      <div className='bg-white w-[136.9px] h-[50px] ml-14 absolute z-10 -mt-6'>
-                        <h3 className='text-black p-3 font-semibold text-[]'>{header}</h3>
+          <div className="flex items-center justify-center gap-[80px]">
+            {roadmapPhase.map(({ id, title, item, item2 }) => (
+              <div key={id} className="w-[240px] h-[255px] bg-black rounded-[8px] px-[20px] pb-[12px] pt-[23px]">
+                <div className="border-dashed border-white border border-t-0 h-full w-full relative">
+                  <div className="absolute -top-[15%] left-[15%]">
+                    <div
+                      className="bg-center bg-cover bg-no-repeat w-[137px] h-[54.13px] rounded-[15px]"
+                      style={{ backgroundImage: `url(${Phase.src})` }}
+                    >
+                      <div className="flex items-center justify-center h-full w-full">
+                        <span className="text-[18px] leading-[17.6px] text-center font-blacknorthdemo text-black">{title}</span>
                       </div>
-                     
-                      <div className="flex justify-between ml-4">
-                        <div className='-mt-10'>
-                          <span className='text-white text-6xl'>.</span>
-                        </div>
-                        <div className='-mt-10 mr-4'>
-                          <span className='text-white text-6xl'>.</span>
-                        </div>
-                      </div>
-
-
-                      <div className='border-dashed border-white border-b-2 border-r-2 border-l-2 w-[200px] h-[220px] ml-5'>
-                        <ul className='p-[10px] grid grid-cols-1 gap-[16px] w-[188px] h-[60px] text-left list-disc ml-4'>
-                          <li className="text-white text-[12.5px] mt-3">  {span} </li>
-                          <li className="text-white text-[12.5px]">  {span2} </li>
-                        </ul>
-                      </div>
-                   </div>
-                 </div>
-            </div>
-          ))}
+                    </div>
+                  </div>
+                  <div className="pt-[21px] px-[6px]">
+                    <ul className="p-[10px] list-disc">
+                      <li className="text-[9px] leading-[12.3px] -tracking-[2.5%] text-white">{item}</li>
+                      <li className="text-[9px] leading-[12.3px] -tracking-[2.5%] text-white mt-4">{item2}</li>
+                    </ul>
+                  </div>
+                  <Image src={CircleIcon} alt="icon" className="absolute top-0 -left-[3%]" />
+                  <Image src={CircleIcon} alt="icon" className="absolute top-0 -right-[3%]" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default RoadMap
+export default RoadMap;

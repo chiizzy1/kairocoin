@@ -1,85 +1,48 @@
-import React from 'react'
-import { Token } from '@/constants'
+import { Chart } from "@/assets";
+import { tokenomics, tokensCard } from "@/constants";
+import Image from "next/image";
+import { FC } from "react";
 
-const Tokenomics: React.FC = () => {
+interface TokenomicsProps {}
+
+const Tokenomics: FC<TokenomicsProps> = ({}) => {
   return (
-    <section className='pt-[40px] pb-[114px] z-[1]'>
-      <div className="container mx-auto w-full relative">
-         <div className="text-center">
-            <h3 className="font-bold text-[40px] text-black">
-               TOKENOMICS
-            </h3>
-         </div>
-         
-
-         <main className="w-[760px] h-[424px] ml-[20rem] text-center p-[5rem] space-y-5 ">
-            {Token.map(({ id, span, percent}) => (
-                <div key={id} className="">
-                  <div className="flex space-x-[25rem]">
-                    <div className="">
-                      <div className="">
-                        <span className="">{percent}</span>
-                      </div>
-                    </div>
-
-                      <div>
-                          <div className='text-left'>
-                            <span className="font-medium text-sm">{span}</span>
-                          </div>
-                          <div className='text-left ml-24 -mt-6'>
-                            <span className="font-bold text-lg">{percent}</span>
-                          </div>
-                      </div>
+    <section className="py-[120px]">
+      <div className="container max-w-6xl mx-auto w-full">
+        <div className="flex flex-col items-center gap-[40px]">
+          <h3 className="text-[40px] leading-[39.2px] text-center text-black font-blacknorthdemo uppercase">Tokenomics</h3>
+          <div className="flex flex-col w-full gap-[48px]">
+            <div className="flex items-center justify-center gap-[40px]">
+              <div className="flex items-center justify-center">
+                <Image src={Chart} alt="chart" />
+              </div>
+              <div className="flex flex-col gap-[32px]">
+                {tokenomics.map(({ id, title, percent }) => (
+                  <div key={id} className="flex items-center justify-between gap-[29px]">
+                    <span className="text-[24px] leading-[32.78px] -tracking-[3%] font-semibold text-black">{title}</span>
+                    <span className="text-[32px] leading-[31.3px] -tracking-[2.5%] font-blacknorthdemo text-black">
+                      {percent}
+                    </span>
                   </div>
-     
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-[40px]">
+              {tokensCard.map(({ id, bgImg, title, description }) => (
+                <div className="bg-center bg-cover bg-no-repeat w-[260px] h-[160px]" style={{ backgroundImage: `url(${bgImg.src})` }} key={id}>
+                  <div className={`flex flex-col gap-2 justify-center pl-[40px] h-full w-full`}>
+                    <span className="text-[24px] leading-[23.47px] font-blacknorthdemo text-black">{title}</span>
+                    <span className="text-[14px] leading-[19px] -tracking-[5%] max-w-[148px] text-black break-words">{description}</span>
+                  </div>
                 </div>
-            ))}
-        </main>
-
-
-         <div className="grid grid-cols-3 gap-[20rem] text-center w-[500px]  ml-52 -mt-20">
-           <div className="w-[200px]  h-[110px] bg-BlueBg p-8 text-left">
-              <h5 className="text-[14px] font-bold">TOKEN SUPPLY</h5>
-              <span className="text-[15px]">1,000,000,000</span>
-           </div>
-           <div className="w-[200px]  h-[110px] bg-RoadBg p-8 text-left">
-              <h5 className="text-[14px] font-bold">TOKEN SYMBOL</h5>
-              <span className="text-[15px]">$KAIRO</span>
-           </div>
-           <div className="w-[200px]  h-[110px] bg-BuyBg p-5 text-left">
-              <h5 className="text-[14px] font-bold">TOKEN ADDRESS</h5>
-              <span className="text-[11px]">0x7B8C1d3FCA7Ff19F841 D3C1D12B2ABAB1E4aF7B2</span>
-           </div>
-         </div>
-
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Tokenomics
-
-
-{/* <main className="w-[760px] h-[424px] ml-[20rem] text-center p-[5rem] space-y-5 ">
-{Token.map(({ id, span, span2}) => (
-   <div key={id} className="">
-     <div className="flex space-x-[25rem]">
-       <div className="">
-         <div className="">
-           <span className="">{span2}</span>
-         </div>
-       </div>
-
-          <p className="">
-             <div className='text-left'>
-               <span className="font-medium text-sm">{span}</span>
-             </div>
-             <div className='text-left ml-24 -mt-6'>
-               <span className="font-bold text-lg">{span2}</span>
-             </div>
-          </p>
-     </div>
-     
-   </div>
-))}
-</main>  */}
+export default Tokenomics;

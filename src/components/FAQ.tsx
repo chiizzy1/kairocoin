@@ -1,38 +1,33 @@
-import React from 'react'
-import { faq } from '@/constants'
-const FAQ: React.FC = () => {
+import { faq } from "@/constants";
+import { FC } from "react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
+
+interface FAQProps {}
+
+const FAQ: FC<FAQProps> = ({}) => {
   return (
-    <section className='pt-[204px] z-[1] bg-BlueBg'>
-      <div className='container mx-auto w-full relative h-[697px] grid gap-[36]'>
-         <div className="text-center -mt-24">
-            <span className='font-bold text-[40px] text-black'>FAQ</span>
-         </div>
-         <div className="w-[697px] h-[332px] grid gap-[40] ml-[16rem]">
-            {faq.map(({ id, desc, arrow}) => (
-                <div key={id} className="">
-                    <div className="flex justify-between text-center bg-black text-white w-[693px] h-[66px] p-[24px]">
-                        <div className="">
-                           <p className="text-[18px] font-semibold">{desc}</p>
-                        </div>
-                        <div className="">
-                           <span className="text-[18px] font-semibold">{arrow}</span>
-                        </div>
-                    </div>
-                </div>
+    <section className="pt-[40px] pb-[86px] bg-primary">
+      <div className="container max-w-6xl mx-auto w-full">
+        <div className="flex flex-col items-center gap-[64px]">
+          <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">FAQ</h3>
+
+          {/* <div className="flex flex-col gap-4"> */}
+          <Accordion type="single" collapsible className="w-full max-w-[693px] flex flex-col gap-4">
+            {faq.map(({ id, title, content }, index) => (
+              <AccordionItem key={id} value={`item-${index + 1}`}>
+                <AccordionTrigger>
+                  <span className="text-[18px] leading-[17.6px] font-blacknorthdemo text-white">{title}</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <span className="text-[14px] leading-[19px] text-black">{content}</span>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-         </div>
-         <div className="w-[1440p] h-[0px] grid gap-5">
-            <hr className='border border-Line -ml-32 -mr-32'/>
-            <div className="text-center">
-               <span className='text-[14px] font-semibold'>
-                 <span className=' text-lg p-1'> &copy; </span>
-                 <span className='text-base'> 2024 By Kairo. All right reserved! </span>
-               </span>
-            </div>
-         </div>
+          </Accordion>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;

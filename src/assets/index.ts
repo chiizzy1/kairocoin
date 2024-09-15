@@ -1,13 +1,28 @@
-import Logo from "./image_fx___4_-removebg-preview 1.png";
-import HeroImage from "./image_fx___4_-removebg-preview.png";
-import AboutImage from "./image_fx___5_-removebg-preview 1.png"
-import Nabox from "./Nabox.png"
-import Binance from "./Binance.png";
-import Gotham from "./gotham.png"
-import Techopedia from "./techopedia.png"
-import SearchIcon from "./search.svg";
-import PlayIcon from "./play.svg";
-import StarImage from "./star.svg";
-import ArrowIcon from "./arrow.svg";
+import Logo from "./logo.svg";
+import HeroImage from "./Hero.svg";
+import AboutImage from "./about.svg"
+import Nabox from "./nabox.svg"
+import Binance from "./binance.svg";
+import Gotham from "./gotham.svg"
+import Techopedia from "./techopedia.svg"
+import YellowBg from "./yellow.png"
+import BlueBg from "./blue.png"
+import BrownBg from "./brown.png"
+import Phase from "./phase.svg"
+import EthLogo from "./eth.svg"
+import Chart from "./chart.svg"
+import CircleIcon from "./icon.svg"
 
-export { Logo, SearchIcon, HeroImage, PlayIcon, StarImage, ArrowIcon, Nabox, Techopedia, Binance, Gotham, AboutImage};
+export {
+    Logo,
+    HeroImage, 
+    Nabox, Techopedia, Binance,
+    Gotham, AboutImage,
+    YellowBg,
+    BlueBg,
+    BrownBg,
+    Phase,
+    EthLogo,
+    Chart,
+    CircleIcon
+};
