@@ -6,14 +6,19 @@ interface RoadMapProps {}
 
 const RoadMap: FC<RoadMapProps> = ({}) => {
   return (
-    <section className="py-[64px] bg-tertiary rounded-[64px]">
-      <div className="container max-w-6xl mx-auto w-full">
+    <section id="roadmap" className="py-[64px] bg-tertiary rounded-[64px]">
+      <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex flex-col items-center gap-[64px]">
           <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">Roadmap</h3>
 
-          <div className="flex items-center justify-center gap-[80px]">
-            {roadmapPhase.map(({ id, title, item, item2 }) => (
-              <div key={id} className="w-[240px] h-[255px] bg-black rounded-[8px] px-[20px] pb-[12px] pt-[23px]">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-[80px]">
+            {roadmapPhase.map(({ id, title, item, item2, animate }) => (
+              <div
+                data-aos={animate}
+                data-aos-delay={"300"}
+                key={id}
+                className="w-[240px] h-[255px] bg-black rounded-[8px] px-[20px] pb-[12px] pt-[23px]"
+              >
                 <div className="border-dashed border-white border border-t-0 h-full w-full relative">
                   <div className="absolute -top-[15%] left-[15%]">
                     <div

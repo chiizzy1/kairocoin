@@ -8,12 +8,12 @@ interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
   return (
-    <section className="pt-[118px] bg-primary">
-      <div className="container max-w-6xl mx-auto w-full">
-        <div className="flex flex-col gap-[387px] pt-[100px] pb-[40px] relative">
-          <div className="flex flex-col gap-[40px] w-full max-w-[701px]">
+    <section id="hero" className="pt-[118px] bg-primary">
+      <div className="container max-w-[1360px] mx-auto w-full">
+        <div className="flex flex-col gap-[40px] lg:gap-[387px] pt-0 lg:pt-[100px] pb-[40px] relative">
+          <div data-aos="zoom-in-right" className="flex flex-col items-center lg:items-start gap-[40px] w-full">
             <h1 className="text-6xl font-extrabold leading-[75.6px] tracking-[10%] text-black font-blacknorthdemo">Kairocoin</h1>
-            <p className="text-[14px] leading-[19.2px] text-black">
+            <p className="text-[14px] leading-[19.2px] text-black text-center lg:text-left max-w-[701px]">
               Whether you’re a seasoned investor or a curious newbie, KairoCoin invites you to join its journey of exploration and
               growth. Dive into the future of finance with a coin that embodies both the rich history of Cairo and the
               cutting-edge potential of the digital age. Let KairoCoin lead the way in the exciting realm of memecoins!
@@ -23,19 +23,9 @@ const Hero: FC<HeroProps> = ({}) => {
               <Button className="uppercase">AUDIT</Button>
             </div>
           </div>
-          <div className="flex flex-col gap-6">
-            <span className="text-[18px] leading-[24.5px] -tracking-[2.5%] text-white">Featured In</span>
-            <div className="flex items-center justify-between">
-              {sponsors.map(({ id, logo }) => (
-                <div key={id}>
-                  <Image src={logo} alt="sponsor logo" />
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Calculator */}
-          <div className="absolute right-0 top-0">
+          {/* Calculator Card */}
+          <div data-aos="zoom-in-left" className="lg:absolute flex items-center justify-center lg:right-0 lg:top-0">
             <div className="relative z-[1]">
               <div className="flex flex-col py-[40px] gap-[40px] px-[40px] w-full max-w-[500px] bg-tertiary border border-black">
                 <h2 className="text-[24px] leading-[23.4px] text-center font-blacknorthdemo text-black">Kairo presale</h2>
@@ -123,6 +113,17 @@ const Hero: FC<HeroProps> = ({}) => {
               </div>
 
               <Image src={HeroImage} alt="hero image" className="hidden lg:block absolute bottom-0 -left-[70%] z-[-1]" />
+            </div>
+          </div>
+
+          <div data-aos="zoom-in" className="flex flex-col gap-6">
+            <span className="text-[18px] leading-[24.5px] -tracking-[2.5%] text-white">Featured In</span>
+            <div className="flex items-center justify-between">
+              {sponsors.map(({ id, logo }) => (
+                <div key={id}>
+                  <Image src={logo} alt="sponsor logo" className="w-full max-w-[90px] h-[16px] lg:max-w-[199px] lg:h-[40px]" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

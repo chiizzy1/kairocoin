@@ -2,34 +2,34 @@ import { Binance, BlueBg, BrownBg, Gotham, Nabox, Techopedia, YellowBg } from "@
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export const navLinks = [
-  { id: "link-1", title: "Home", link: "/" },
-  { id: "link-2", title: "About", link: "/" },
-  { id: "link-3", title: "How to Buy", link: "/" },
-  { id: "link-4", title: "Tokenomics", link: "/" },
-  { id: "link-5", title: "Roadmap", link: "/" },
-  { id: "link-6", title: "FAQ", link: "/" },
+  { id: "home", title: "Home", link: "/" },
+  { id: "about", title: "About", link: "/" },
+  { id: "buy", title: "How to Buy", link: "/" },
+  { id: "roadmap", title: "Roadmap", link: "/" },
+  { id: "tokenomics", title: "Tokenomics", link: "/" },
+  { id: "faq", title: "FAQ", link: "/" },
 ];
 
 export const HowtoBuy = [
   {
-    id: "howtobuy-1",
+    id: "howtobuy-1", animate: "fade-down-right",
     number: 1,
     span: "GET A WALLET",
     desc: "First, you need a compatible wallet to store $KAIRO. We recommend using Phantom for ease of use and security",
   },
   {
-    id: "howtobuy-2",
+    id: "howtobuy-2", animate: "fade-down-left",
     number: 2,
     span: "BUY SOLANA",
     desc: "To acquire $KAIRO, you’ll need solana in your phantom wallet. Purchase solana from major cryptocurrency exchanges like Binance or Kraken",
   },
   {
-    id: "howtobuy-3",
+    id: "howtobuy-3", animate: "fade-up-right",
     number: 3,
     span: "ADD $KAIRO TO YOUR WALLET",
     desc: "Enter the amount of solana you wnat to exchange for $KAIRO and confirm the transaction. Add $KAIRO contract afterwards to view your token balance",
   },
-  { id: "howtobuy-4", number: 4, span: "CHECK YOUR WALLET", desc: "Now, there you have it!" },
+  { id: "howtobuy-4", animate: "fade-up-left", number: 4, span: "CHECK YOUR WALLET", desc: "Now, there you have it!" },
 ];
 
 export const faq = [
@@ -40,9 +40,9 @@ export const faq = [
 ];
 
 export const roadmapPhase = [
-  { id: "RoadmapPhase-1", title: "PHASE 1", item: "Get listed on exchanges", item2: "Get to 1000 Holders" },
-  { id: "RoadmapPhase-2", title: "PHASE 2", item: "Kickstart with marketing", item2: "Get to 10,000 Holders" },
-  { id: "RoadmapPhase-3", title: "PHASE 3", item: "Listing on more exchanges", item2: "Get it trending everywhere" },
+  { id: "RoadmapPhase-1", animate: "flip-left", title: "PHASE 1", item: "Get listed on exchanges", item2: "Get to 1000 Holders" },
+  { id: "RoadmapPhase-2", animate: "flip-up", title: "PHASE 2", item: "Kickstart with marketing", item2: "Get to 10,000 Holders" },
+  { id: "RoadmapPhase-3", animate: "flip-right", title: "PHASE 3", item: "Listing on more exchanges", item2: "Get it trending everywhere" },
 ];
 
 export const tokenomics = [

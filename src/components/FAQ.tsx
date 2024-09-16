@@ -6,8 +6,8 @@ interface FAQProps {}
 
 const FAQ: FC<FAQProps> = ({}) => {
   return (
-    <section className="pt-[40px] pb-[86px] bg-primary">
-      <div className="container max-w-6xl mx-auto w-full">
+    <section id="faq" className="pt-[40px] pb-[86px] bg-primary">
+      <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex flex-col items-center gap-[64px]">
           <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">FAQ</h3>
 

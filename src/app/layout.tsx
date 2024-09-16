@@ -5,8 +5,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import { AOSInit } from "@/components/ui/aos";
+import { Providers } from "./providers";
 
-const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], });
+const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 
 const blacknorthdemo = localFont({
   src: "./fonts/blacknorthdemo.otf",
@@ -15,7 +17,8 @@ const blacknorthdemo = localFont({
 
 export const metadata: Metadata = {
   title: "KairoCoin",
-  description: "The future of finance with a coin that embodies both the rich history of Cairo and the cutting-edge potential of the digital age.",
+  description:
+    "The future of finance with a coin that embodies both the rich history of Cairo and the cutting-edge potential of the digital age.",
 };
 
 export default function RootLayout({
@@ -25,9 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <AOSInit />
       <body className={cn("bg-white", manrope.className, blacknorthdemo.variable)}>
         <Navbar />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

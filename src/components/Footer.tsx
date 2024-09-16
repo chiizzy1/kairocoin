@@ -7,7 +7,7 @@ const Footer: FC<FooterProps> = ({}) => {
   return (
     <footer className="bg-primary">
       <hr className="border-t border-white w-full" />
-      <div className="container max-w-6xl mx-auto w-full">
+      <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex items-center justify-center gap-6 py-[18px]">
           <LuCopyright size={32} className="text-black" />
 
