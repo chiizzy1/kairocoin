@@ -20,16 +20,16 @@ const Hero: FC<HeroProps> = ({}) => {
               growth. Dive into the future of finance with a coin that embodies both the rich history of Cairo and the
               cutting-edge potential of the digital age. Let KairoCoin lead the way in the exciting realm of memecoins!
             </p>
-            <div className="flex items-center gap-[40px]">
-              <Button className="uppercase">Whitepaper</Button>
-              <Button className="uppercase">AUDIT</Button>
+            <div className="flex flex-col md:flex-row items-center gap-[24px] md:gap-[40px] w-full">
+              <Button className="uppercase w-full">Whitepaper</Button>
+              <Button className="uppercase w-full">AUDIT</Button>
             </div>
           </div>
 
           {/* Calculator Card */}
           <div data-aos="zoom-in-left" className="lg:absolute flex items-center justify-center lg:right-0 lg:top-0">
             <div className="relative z-[1]">
-              <div className="flex flex-col py-[40px] gap-[24px] md:gap-[40px] px-[40px] w-full max-w-[500px] bg-tertiary border border-black">
+              <div className="flex flex-col py-[40px] gap-[24px] md:gap-[40px] px-[24px] md:px-[40px] w-full max-w-[500px] bg-tertiary border border-black">
                 <h2 className="text-[24px] leading-[23.4px] text-center font-blacknorthdemo text-black">Kairo presale</h2>
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-4">
