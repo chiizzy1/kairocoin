@@ -21,7 +21,7 @@ const About: FC<AboutProps> = ({}) => {
                 symbol of innovation and fun in the world of cryptocurrency.
               </p>
 
-              <div className="flex items-center gap-[40px]">
+              <div className="flex items-center gap-4 md:gap-[40px]">
                 <Button>Telegram</Button>
                 <Button>Discord</Button>
                 <Button>Twitter</Button>
