@@ -11,7 +11,7 @@ const Tokenomics: FC<TokenomicsProps> = ({}) => {
     <section id="tokenomics" className="py-[120px]">
       <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex flex-col items-center gap-[40px]">
-          <h3 className="text-[40px] leading-[39.2px] text-center text-black font-blacknorthdemo uppercase">Tokenomics</h3>
+          <h3 className="header-text text-center text-black font-blacknorthdemo uppercase">Tokenomics</h3>
           <div className="flex flex-col w-full gap-[48px]">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-[40px]">
               <div data-aos="zoom-in-right" className="flex items-center justify-center">

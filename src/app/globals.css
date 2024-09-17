@@ -24,3 +24,58 @@ button:hover {
 .brown {
   background: rgba(30, 30, 30, 0.31);
 }
+
+.header-text {
+  font-size: 40px;
+  line-height: 39.12px;
+  text-align: center;
+  font-weight: 400; /* Main class */
+  letter-spacing: -2.5%;
+}
+
+.span-text {
+  font-size: 14px;
+  line-height: 19.2px;
+  text-align: center;
+  font-weight: 700; /* Main class */
+}
+
+.tiny-text {
+  font-size: 12px;
+  line-height: 16.4px;
+  font-weight: 700; /* Main class */
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 24.59px;
+  font-weight: 500; /* Main class */
+  color: white;
+  letter-spacing: -2.5%;
+}
+
+@media (max-width: 768px) {
+
+  .header-text {
+    font-size: 32px;
+    line-height: 31.3px;
+  }
+  
+  .span-text {
+    font-size: 8.4px;
+    line-height: 11.47px;
+    text-align: center;
+  }
+
+  .tiny-text {
+    font-size: 7.2px;
+    line-height: 9.84px;
+  }
+
+  .about-text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300; 
+    text-align: center;
+  }
+}

@@ -9,7 +9,7 @@ const RoadMap: FC<RoadMapProps> = ({}) => {
     <section id="roadmap" className="py-[64px] bg-tertiary rounded-[64px]">
       <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex flex-col items-center gap-[64px]">
-          <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">Roadmap</h3>
+          <h3 className="header-text text-center font-blacknorthdemo uppercase">Roadmap</h3>
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-[80px]">
             {roadmapPhase.map(({ id, title, item, item2, animate }) => (

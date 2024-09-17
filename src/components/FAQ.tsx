@@ -9,7 +9,7 @@ const FAQ: FC<FAQProps> = ({}) => {
     <section id="faq" className="pt-[40px] pb-[86px] bg-primary">
       <div className="container max-w-[1360px] mx-auto w-full">
         <div className="flex flex-col items-center gap-[64px]">
-          <h3 className="text-[40px] leading-[39.2px] text-center font-blacknorthdemo uppercase">FAQ</h3>
+          <h3 className="header-text text-center font-blacknorthdemo uppercase">FAQ</h3>
 
           {/* <div className="flex flex-col gap-4"> */}
           <Accordion type="single" collapsible className="w-full max-w-[693px] flex flex-col gap-4">
