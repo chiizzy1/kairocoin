@@ -20,7 +20,7 @@ const RoadMap: FC<RoadMapProps> = ({}) => {
                 className="w-[240px] h-[255px] bg-black rounded-[8px] px-[20px] pb-[12px] pt-[23px]"
               >
                 <div className="border-dashed border-white border border-t-0 h-full w-full relative">
-                  <div className="absolute -top-[15%] left-[15%]">
+                  <div className="absolute -top-[18%] left-[15%]">
                     <div
                       className="bg-center bg-cover bg-no-repeat w-[137px] h-[54.13px] rounded-[15px]"
                       style={{ backgroundImage: `url(${Phase.src})` }}
@@ -30,14 +30,14 @@ const RoadMap: FC<RoadMapProps> = ({}) => {
                       </div>
                     </div>
                   </div>
-                  <div className="pt-[21px] px-[6px]">
+                  <div className="pt-[21px] px-[6px] flex items-center justify-center">
                     <ul className="p-[10px] list-disc">
-                      <li className="text-[9px] leading-[12.3px] -tracking-[2.5%] text-white">{item}</li>
-                      <li className="text-[9px] leading-[12.3px] -tracking-[2.5%] text-white mt-4">{item2}</li>
+                      <li className="text-[12px] leading-[16.4px] -tracking-[2.5%] text-white">{item}</li>
+                      <li className="text-[12px] leading-[16.4px] -tracking-[2.5%] text-white mt-4">{item2}</li>
                     </ul>
                   </div>
-                  <Image src={CircleIcon} alt="icon" className="absolute top-0 -left-[3%]" />
-                  <Image src={CircleIcon} alt="icon" className="absolute top-0 -right-[3%]" />
+                  <Image src={CircleIcon} alt="icon" className="absolute -top-[5%] -left-[3%]" />
+                  <Image src={CircleIcon} alt="icon" className="absolute -top-[5%] -right-[3%]" />
                 </div>
               </div>
             ))}
