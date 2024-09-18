@@ -24,7 +24,7 @@ const Hero: FC<HeroProps> = ({}) => {
             <h1 className="text-[64px] md:text-[90px] font-extrabold leading-[62.6px] tracking-[10%] md:leading-[88px] md:tracking-[10%] text-black font-blacknorthdemo">
               Kairocoin
             </h1>
-            <p className="text-[12px] leading-[18px] md:text-[14px] md:leading-[19.2px] text-black text-center lg:text-left max-w-[80ch]">
+            <p className="text-[12px] leading-[18px] md:text-[14px] md:leading-[19.2px] text-black text-center lg:text-left max-w-[446px] lg:max-w-[580px] xl:max-w-[700px]">
               Whether you’re a seasoned investor or a curious newbie, KairoCoin invites you to join its journey of exploration and
               growth. Dive into the future of finance with a coin that embodies both the rich history of Cairo and the
               cutting-edge potential of the digital age. Let KairoCoin lead the way in the exciting realm of memecoins!

@@ -14,7 +14,7 @@ const About: FC<AboutProps> = ({}) => {
 
           <div className="relative flex flex-col gap-[60px] py-0 lg:py-[94.5px] w-full">
             <div data-aos="zoom-in-right" className="flex flex-col items-center lg:items-start gap-[40px]">
-              <p className="about-text text-center lg:text-start max-w-[772px]">
+              <p className="about-text text-center lg:text-start max-w-[460px] lg:max-w-[580px] xl:max-w-[772px]">
                 Meet KairoCoin, the memecoin mascot that’s sweeping the crypto world with charm and charisma! Inspired by the
                 adventurous spirit of its namesake, Cairo, KairoCoin brings a touch of excitement and energy to the digital
                 currency scene. With a sleek, modern logo and a playful personality, KairoCoin is not just another token—it’s a
