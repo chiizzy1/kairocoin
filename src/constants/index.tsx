@@ -1,4 +1,16 @@
-import { Binance, BlueBg, BrownBg, Gotham, Nabox, Techopedia, YellowBg } from "@/assets";
+import {
+  Binance,
+  BlueBg,
+  BnbIcon,
+  BrownBg,
+  EthLogo,
+  Gotham,
+  Nabox,
+  PolygonIcon,
+  SolanaIcon,
+  Techopedia,
+  YellowBg,
+} from "@/assets";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export const navLinks = [
@@ -12,19 +24,22 @@ export const navLinks = [
 
 export const HowtoBuy = [
   {
-    id: "howtobuy-1", animate: "fade-down-right",
+    id: "howtobuy-1",
+    animate: "fade-down-right",
     number: 1,
     span: "GET A WALLET",
     desc: "First, you need a compatible wallet to store $KAIRO. We recommend using Phantom for ease of use and security",
   },
   {
-    id: "howtobuy-2", animate: "fade-down-left",
+    id: "howtobuy-2",
+    animate: "fade-down-left",
     number: 2,
     span: "BUY SOLANA",
     desc: "To acquire $KAIRO, you’ll need solana in your phantom wallet. Purchase solana from major cryptocurrency exchanges like Binance or Kraken",
   },
   {
-    id: "howtobuy-3", animate: "fade-up-right",
+    id: "howtobuy-3",
+    animate: "fade-up-right",
     number: 3,
     span: "ADD $KAIRO TO YOUR WALLET",
     desc: "Enter the amount of solana you wnat to exchange for $KAIRO and confirm the transaction. Add $KAIRO contract afterwards to view your token balance",
@@ -41,8 +56,20 @@ export const faq = [
 
 export const roadmapPhase = [
   { id: "RoadmapPhase-1", animate: "flip-left", title: "PHASE 1", item: "Get listed on exchanges", item2: "Get to 1000 Holders" },
-  { id: "RoadmapPhase-2", animate: "flip-up", title: "PHASE 2", item: "Kickstart with marketing", item2: "Get to 10,000 Holders" },
-  { id: "RoadmapPhase-3", animate: "flip-right", title: "PHASE 3", item: "Listing on more exchanges", item2: "Get it trending everywhere" },
+  {
+    id: "RoadmapPhase-2",
+    animate: "flip-up",
+    title: "PHASE 2",
+    item: "Kickstart with marketing",
+    item2: "Get to 10,000 Holders",
+  },
+  {
+    id: "RoadmapPhase-3",
+    animate: "flip-right",
+    title: "PHASE 3",
+    item: "Listing on more exchanges",
+    item2: "Get it trending everywhere",
+  },
 ];
 
 export const tokenomics = [
@@ -63,4 +90,11 @@ export const tokensCard = [
   { id: "card-", title: "token supply", description: "1,000,000,000", bgImg: BlueBg },
   { id: "card-", title: "token symbol", description: "$KAIRO", bgImg: BrownBg },
   { id: "card-", title: "Token address", description: "0x7B8C1d3FCA7Ff19F841D3C1D12B2ABAB1E4aF7B2", bgImg: YellowBg },
+];
+
+export const chains = [
+  { id: "i", icon: EthLogo, name: 'ETH' },
+  { id: "i", icon: SolanaIcon, name: 'SOL' },
+  { id: "i", icon: BnbIcon, name: 'BNB' },
+  { id: "i", icon: PolygonIcon, name: 'MATIC' },
 ];

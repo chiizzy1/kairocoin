@@ -1,12 +1,21 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState } from "react";
 import Image from "next/image";
-import { HeroImage, EthLogo, Logo } from "@/assets";
+import { HeroImage, EthLogo, Logo, DropdownIcon } from "@/assets";
 import { Button } from "./ui/Button";
-import { sponsors } from "@/constants";
+import { chains, sponsors } from "@/constants";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeChainIndex, setActiveChainIndex] = useState(0);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen); // Toggle dropdown visibility
+  };
+
   return (
     <section id="hero" className="pt-[118px] bg-primary">
       <div className="container max-w-[1360px] mx-auto w-full">
@@ -15,40 +24,61 @@ const Hero: FC<HeroProps> = ({}) => {
             <h1 className="text-[64px] md:text-[90px] font-extrabold leading-[62.6px] tracking-[10%] md:leading-[88px] md:tracking-[10%] text-black font-blacknorthdemo">
               Kairocoin
             </h1>
-            <p className="text-[12px] leading-[18px] md:text-[14px] md:leading-[19.2px] text-black text-center lg:text-left max-w-[701px]">
+            <p className="text-[12px] leading-[18px] md:text-[14px] md:leading-[19.2px] text-black text-center lg:text-left max-w-[80ch]">
               Whether you’re a seasoned investor or a curious newbie, KairoCoin invites you to join its journey of exploration and
               growth. Dive into the future of finance with a coin that embodies both the rich history of Cairo and the
               cutting-edge potential of the digital age. Let KairoCoin lead the way in the exciting realm of memecoins!
             </p>
-            <div className="flex flex-col md:flex-row items-center gap-[24px] md:gap-[40px] w-full">
-              <Button className="uppercase w-full">Whitepaper</Button>
-              <Button className="uppercase w-full">AUDIT</Button>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-[24px] md:gap-[40px] w-full sm:w-fit">
+              <Button className="uppercase w-full sm:w-[107px]">Whitepaper</Button>
+              <Button className="uppercase w-full sm:w-[107px]">AUDIT</Button>
             </div>
           </div>
 
           {/* Calculator Card */}
-          <div data-aos="zoom-in-left" className="lg:absolute flex items-center justify-end lg:right-0 lg:top-0">
+          <div
+            data-aos="zoom-in-left"
+            className="lg:absolute flex items-center justify-end sm:justify-center lg:right-0 lg:top-0"
+          >
             <div className="relative z-[1]">
               <div className="flex flex-col py-[24px] md:py-[40px] gap-[24px] md:gap-[40px] px-[24px] md:px-[40px] w-full max-w-[500px] bg-tertiary border border-black">
-                <h2 className="text-[14.4px] leading-[14px] md:text-[24px] md:leading-[23.4px] text-center font-blacknorthdemo text-black">Kairo presale</h2>
+                <h2 className="text-[14.4px] leading-[14px] md:text-[24px] md:leading-[23.4px] text-center font-blacknorthdemo text-black">
+                  Kairo presale
+                </h2>
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-center gap-6">
                       <div className="flex flex-col gap-2">
-                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">00:</span>
-                        <span className="text-[8.4px] leading-[11.47px] md:text-8.4] md:leading-[1.472px] text-center text-black">Days</span>
+                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
+                          00:
+                        </span>
+                        <span className="text-[8.4px] leading-[11.47px] md:text-8.4] md:leading-[1.472px] text-center text-black">
+                          Days
+                        </span>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">00:</span>
-                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">Hours</span>
+                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
+                          00:
+                        </span>
+                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
+                          Hours
+                        </span>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">00:</span>
-                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">Minutes</span>
+                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
+                          00:
+                        </span>
+                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
+                          Minutes
+                        </span>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">00</span>
-                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">Seconds</span>
+                        <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
+                          00
+                        </span>
+                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
+                          Seconds
+                        </span>
                       </div>
                     </div>
                     <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center font-bold text-black">
@@ -85,12 +115,41 @@ const Hero: FC<HeroProps> = ({}) => {
                         <span className="tiny-text">You Pay</span>
                         <span className="tiny-text">Available $ETH= 2.5ETH</span>
                       </div>
-                      <div className="flex items-center py-2 px-4 h-[30px] md:h-[48px] w-full bg-white border border-black">
-                        <Image src={EthLogo} alt="eth logo" className="w-[19.2px] h-[19.2px] md:h-[32px] md:w-[32px]" />
+                      <div className="flex items-center py-2 px-4 h-[30px] md:h-[48px] w-full bg-white border border-black relative">
+                        <div onClick={toggleDropdown} className="flex items-center gap-2 cursor-pointer">
+                          <Image
+                            src={chains[activeChainIndex].icon}
+                            alt="eth logo"
+                            className="w-[19.2px] h-[19.2px] md:h-[32px] md:w-[32px]"
+                          />
+                          <Image src={DropdownIcon} alt="icon" />
+                        </div>
                         <input
                           className="border-none w-full outline-none bg-transparent text-[7.2px] leading-[9.84px] md:text-[12px] md:leading-[16.4px] text-black text-end"
-                          placeholder="0.OO SOL"
+                          placeholder={`0.OO ${chains[activeChainIndex].name}`}
                         />
+
+                        {dropdownOpen && ( // Render dropdown if open
+                          <div className="absolute h-[65px] w-[50px] overflow-y-scroll -bottom-[100%] bg-white border border-black flex flex-col">
+                            {chains.map(({ id, icon }, index) => (
+                              <div
+                                key={id}
+                                className="cursor-pointer hover:bg-primary/20"
+                                onClick={() => {
+                                  setDropdownOpen(false);
+                                  setActiveChainIndex(index);
+                                }}
+                              >
+                                <div className="flex items-center justify-center">
+                                  <Image src={icon} alt="sponsor logo" className="w-[32px] h-[32px]" />
+                                </div>
+                                {index < chains.length - 1 && ( // Add divider except for the last child
+                                  <hr className="border-t border-gray-300" />
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -114,12 +173,14 @@ const Hero: FC<HeroProps> = ({}) => {
                 </Button>
               </div>
 
-              <Image src={HeroImage} alt="hero image" className="absolute bottom-0 -left-[70%] z-[-1]" />
+              <Image src={HeroImage} alt="hero image" className="absolute bottom-0 -left-[60%] md:-left-[70%] z-[-1]" />
             </div>
           </div>
 
           <div data-aos="zoom-in" className="flex flex-col gap-6">
-            <span className="text-[18px] leading-[24.5px] -tracking-[2.5%] text-white">Featured In</span>
+            <span className="text-[9px] leading-[12.3px] md:text-[18px] md:leading-[24.5px] -tracking-[2.5%] text-white">
+              Featured In
+            </span>
             <div className="flex items-center justify-between">
               {sponsors.map(({ id, logo }) => (
                 <div key={id}>

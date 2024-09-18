@@ -12,6 +12,10 @@ import Logo from "./logooo.svg";
 import EthLogo from "./eth.svg"
 import Chart from "./chart.svg"
 import CircleIcon from "./icon.svg"
+import DropdownIcon from './dropdown.svg'
+import SolanaIcon from './solana.svg'
+import BnbIcon from './binanceicon.svg'
+import PolygonIcon from './polygon.svg'
 
 export {
     HeroImage,
@@ -24,5 +28,9 @@ export {
     EthLogo,
     Chart,
     CircleIcon,
-    Logo
+    Logo,
+    DropdownIcon,
+    SolanaIcon,
+    PolygonIcon,
+    BnbIcon
 };
