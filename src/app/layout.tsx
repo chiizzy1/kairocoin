@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
 import { AOSInit } from "@/components/ui/aos";
 import { Providers } from "./providers";
+import Web3ModalProvider from "@/contexts/Web3Modal";
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 
@@ -30,9 +31,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <AOSInit />
       <body className={cn("bg-white", manrope.className, blacknorthdemo.variable)}>
-        <Navbar />
-        <Providers>{children}</Providers>
-        <Footer />
+        <Web3ModalProvider>
+          <Navbar />
+          <Providers>{children}</Providers>
+          <Footer />
+        </Web3ModalProvider>
       </body>
     </html>
   );

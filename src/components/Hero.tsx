@@ -109,7 +109,7 @@ const Hero: FC<HeroProps> = ({}) => {
 
                   <div className="flex flex-col gap-2">
                     <div className="w-full h-[7.2px] md:h-[12px] rounded-[15px] brown">
-                      <div className="h-full bg-black w-[30%] rounded-[15px]" />
+                      <div className="h-full bg-black w-[35%] rounded-[15px]" />
                     </div>
 
                     <div className="flex items-center justify-between">

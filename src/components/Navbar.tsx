@@ -7,12 +7,22 @@ import { Logo } from "@/assets";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/Button";
 import { Menu, X } from "lucide-react";
+import { useAccount } from "wagmi";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+import { truncateAddress } from "@/lib/utils";
 
 const Navbar = () => {
   const [stickyClass, setStickyClass] = useState<boolean>(false);
   const [active, setActive] = useState<string>("Home");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
+
+  const { isConnected, address } = useAccount();
+  const { open } = useWeb3Modal();
+
+  const handleConnect = () => {
+    open();
+  };
   const stickNavbar = () => {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
@@ -53,7 +63,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <Button className="uppercase hidden lg:block">Buy Presale</Button>
+          <Button className="uppercase hidden lg:block" onClick={handleConnect}>{!isConnected ? "Buy Presale" : truncateAddress(address)}</Button>
 
           <Button
             variant="outline"
@@ -83,7 +93,7 @@ const Navbar = () => {
                 </ul>
               ))}
             </div>
-            <Button className="uppercase w-full max-w-[390px]">Buy Presale</Button>
+            <Button className="uppercase w-full" onClick={handleConnect}>{!isConnected ? "Buy Presale" : truncateAddress(address)}</Button>
           </div>
         ) : (
           ""
