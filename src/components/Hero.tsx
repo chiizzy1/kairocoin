@@ -52,7 +52,7 @@ const Hero: FC<HeroProps> = ({}) => {
                         <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
                           00:
                         </span>
-                        <span className="text-[8.4px] leading-[11.47px] md:text-8.4] md:leading-[1.472px] text-center text-black">
+                        <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
                           Days
                         </span>
                       </div>
@@ -130,7 +130,7 @@ const Hero: FC<HeroProps> = ({}) => {
                         />
 
                         {dropdownOpen && ( // Render dropdown if open
-                          <div className="absolute h-[65px] w-[50px] overflow-y-scroll -bottom-[100%] bg-white border border-black flex flex-col">
+                          <div className="absolute h-[65px] w-[80px] overflow-y-scroll scrollbar-hide left-0 -bottom-[110%] bg-white border border-black flex flex-col">
                             {chains.map(({ id, icon }, index) => (
                               <div
                                 key={id}
