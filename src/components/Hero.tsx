@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import { HeroImage, EthLogo, Logo, DropdownIcon } from "@/assets";
 import { Button } from "./ui/Button";
@@ -11,6 +11,27 @@ interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeChainIndex, setActiveChainIndex] = useState(0);
+  const [countdown, setCountdown] = useState(3 * 24 * 60 * 60); // Countdown in seconds
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 0) {
+          clearInterval(interval);
+          return 3 * 24 * 60 * 60; // Reset to 3 days
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  // Calculate days, hours, minutes, seconds
+  const days = Math.floor(countdown / (24 * 60 * 60));
+  const hours = Math.floor((countdown % (24 * 60 * 60)) / (60 * 60));
+  const minutes = Math.floor((countdown % (60 * 60)) / 60);
+  const seconds = countdown % 60;
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen); // Toggle dropdown visibility
@@ -25,7 +46,7 @@ const Hero: FC<HeroProps> = ({}) => {
               Kairocoin
             </h1>
             <p className="text-[12px] leading-[18px] md:text-[14px] md:leading-[19.2px] text-black text-center lg:text-left max-w-[446px] lg:max-w-[580px] xl:max-w-[700px]">
-              Whether you’re a seasoned investor or a curious newbie, KairoCoin invites you to join its journey of exploration and
+              Whether you`&apos;`re a seasoned investor or a curious newbie, KairoCoin invites you to join its journey of exploration and
               growth. Dive into the future of finance with a coin that embodies both the rich history of Cairo and the
               cutting-edge potential of the digital age. Let KairoCoin lead the way in the exciting realm of memecoins!
             </p>
@@ -50,7 +71,7 @@ const Hero: FC<HeroProps> = ({}) => {
                     <div className="flex items-center justify-center gap-6">
                       <div className="flex flex-col gap-2">
                         <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
-                          00:
+                          {String(days).padStart(2, '0')}:
                         </span>
                         <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
                           Days
@@ -58,7 +79,7 @@ const Hero: FC<HeroProps> = ({}) => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
-                          00:
+                          {String(hours).padStart(2, '0')}:
                         </span>
                         <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
                           Hours
@@ -66,7 +87,7 @@ const Hero: FC<HeroProps> = ({}) => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
-                          00:
+                          {String(minutes).padStart(2, '0')}:
                         </span>
                         <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
                           Minutes
@@ -74,7 +95,7 @@ const Hero: FC<HeroProps> = ({}) => {
                       </div>
                       <div className="flex flex-col gap-2">
                         <span className="text-[24px] leading-[32.78px] md:text-[40px] md:leading-[54.64px] font-semibold text-black">
-                          00
+                          {String(seconds).padStart(2, '0')}
                         </span>
                         <span className="text-[8.4px] leading-[11.47px] md:text-[14px] md:leading-[19.2px] text-center text-black">
                           Seconds
