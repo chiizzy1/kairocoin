@@ -11,7 +11,7 @@ const HowToBuy: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {HowtoBuy.map(({ id, number, span, desc, animate }) => (
               <div
-                data-aos={animate}
+                data-aos="zoom-in"
                 data-aos-delay="300"
                 key={id}
                 className="flex gap-4 bg-secondary h-[144px] w-full p-[32px] border border-black"
